@@ -2,7 +2,7 @@ import React from "react";
 
 const HangmanWord = () => {
   const word = "test";
-  const guessedLetters =["t"];
+  const guessedLetters = ["t"];
   return (
     <div
       style={{
@@ -16,13 +16,20 @@ const HangmanWord = () => {
     >
       {word.split("").map((letter, index) => (
         <span
+          key={index}
           style={{
             borderBottom: ".1em solid black",
           }}
         >
-          <span style={{
-            visibility: guessedLetters.includes(letter) ? "visible" : "hidden"
-          }}>{letter}</span>
+          <span
+            style={{
+              visibility: guessedLetters.includes(letter)
+                ? "visible"
+                : "hidden",
+            }}
+          >
+            {letter}
+          </span>
         </span>
       ))}
     </div>
